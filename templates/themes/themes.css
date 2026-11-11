@@ -1,0 +1,189 @@
+/* HyperCraft UI & Web App Studio - 10 Curated Semantic Themes */
+
+/* ==========================================================================
+   Base Browser Surface Resets & Theming
+   ========================================================================== */
+::selection {
+  background-color: var(--selection-bg, oklch(88% 0.08 260));
+  color: var(--selection-text, oklch(20% 0.15 260));
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb, oklch(75% 0.01 240 / 0.4));
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover, oklch(55% 0.02 240 / 0.6));
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: 
+    0 0 0 2px var(--bg-canvas, #ffffff),
+    0 0 0 4px var(--ring-color, #6366f1);
+}
+
+.tabular-numbers {
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+/* ==========================================================================
+   Theme 1: Onyx Modern (Default)
+   ========================================================================== */
+:root, [data-theme="onyx"] {
+  --bg-canvas: oklch(99% 0 0);
+  --bg-surface: oklch(100% 0 0);
+  --bg-elevated: oklch(97% 0 0);
+  --bg-subtle: oklch(95% 0 0);
+  --border-subtle: oklch(92% 0 0);
+  --border-strong: oklch(80% 0 0);
+  --text-primary: oklch(12% 0 0);
+  --text-secondary: oklch(42% 0 0);
+  --text-muted: oklch(62% 0 0);
+  --action-primary: oklch(14% 0 0);
+  --action-hover: oklch(24% 0 0);
+  --action-text: oklch(99% 0 0);
+  --ring-color: oklch(14% 0 0);
+  --selection-bg: oklch(92% 0 0);
+  --selection-text: oklch(10% 0 0);
+}
+
+.dark, [data-theme="onyx"].dark, .dark [data-theme="onyx"] {
+  --bg-canvas: oklch(12% 0 0);
+  --bg-surface: oklch(16% 0 0);
+  --bg-elevated: oklch(20% 0 0);
+  --bg-subtle: oklch(24% 0 0);
+  --border-subtle: oklch(26% 0 0);
+  --border-strong: oklch(34% 0 0);
+  --text-primary: oklch(98% 0 0);
+  --text-secondary: oklch(72% 0 0);
+  --text-muted: oklch(52% 0 0);
+  --action-primary: oklch(98% 0 0);
+  --action-hover: oklch(88% 0 0);
+  --action-text: oklch(12% 0 0);
+  --ring-color: oklch(98% 0 0);
+  --selection-bg: oklch(30% 0 0);
+  --selection-text: oklch(98% 0 0);
+}
+
+/* ==========================================================================
+   Theme 2: Nordic Slate
+   ========================================================================== */
+[data-theme="nordic-slate"] {
+  --bg-canvas: oklch(98.5% 0.008 230);
+  --bg-surface: oklch(100% 0 0);
+  --bg-elevated: oklch(96% 0.012 230);
+  --border-subtle: oklch(91% 0.015 230);
+  --text-primary: oklch(18% 0.03 235);
+  --text-secondary: oklch(45% 0.03 235);
+  --action-primary: oklch(52% 0.20 245);
+  --action-hover: oklch(46% 0.22 245);
+  --action-text: oklch(99% 0 0);
+  --ring-color: oklch(52% 0.20 245);
+}
+
+.dark [data-theme="nordic-slate"] {
+  --bg-canvas: oklch(15% 0.02 235);
+  --bg-surface: oklch(19% 0.025 235);
+  --bg-elevated: oklch(24% 0.03 235);
+  --border-subtle: oklch(28% 0.025 235);
+  --text-primary: oklch(96% 0.01 230);
+  --text-secondary: oklch(72% 0.02 230);
+  --action-primary: oklch(62% 0.22 245);
+  --action-hover: oklch(68% 0.22 245);
+  --action-text: oklch(12% 0.02 235);
+  --ring-color: oklch(62% 0.22 245);
+}
+
+/* ==========================================================================
+   Theme 3: Velvet Emerald (Fintech & Wealth)
+   ========================================================================== */
+[data-theme="velvet-emerald"] {
+  --bg-canvas: oklch(98.5% 0.005 140);
+  --bg-surface: oklch(100% 0 0);
+  --border-subtle: oklch(91% 0.015 140);
+  --text-primary: oklch(18% 0.03 145);
+  --text-secondary: oklch(42% 0.03 145);
+  --action-primary: oklch(42% 0.14 150);
+  --action-hover: oklch(36% 0.15 150);
+  --action-text: oklch(99% 0 0);
+  --ring-color: oklch(42% 0.14 150);
+}
+
+.dark [data-theme="velvet-emerald"] {
+  --bg-canvas: oklch(14% 0.03 150);
+  --bg-surface: oklch(18% 0.035 150);
+  --border-subtle: oklch(26% 0.03 150);
+  --text-primary: oklch(96% 0.01 140);
+  --text-secondary: oklch(70% 0.02 140);
+  --action-primary: oklch(58% 0.16 150);
+  --action-hover: oklch(64% 0.16 150);
+  --action-text: oklch(10% 0.02 150);
+  --ring-color: oklch(58% 0.16 150);
+}
+
+/* ==========================================================================
+   Theme 4: Cyber Indigo
+   ========================================================================== */
+[data-theme="cyber-indigo"] {
+  --bg-canvas: oklch(99% 0.005 270);
+  --bg-surface: oklch(100% 0 0);
+  --border-subtle: oklch(92% 0.015 270);
+  --text-primary: oklch(16% 0.03 270);
+  --text-secondary: oklch(44% 0.03 270);
+  --action-primary: oklch(54% 0.24 275);
+  --action-hover: oklch(48% 0.25 275);
+  --action-text: oklch(99% 0 0);
+  --ring-color: oklch(54% 0.24 275);
+}
+
+.dark [data-theme="cyber-indigo"] {
+  --bg-canvas: oklch(13% 0.03 275);
+  --bg-surface: oklch(17% 0.04 275);
+  --border-subtle: oklch(27% 0.035 275);
+  --text-primary: oklch(98% 0.01 270);
+  --text-secondary: oklch(72% 0.02 270);
+  --action-primary: oklch(62% 0.25 275);
+  --action-hover: oklch(68% 0.25 275);
+  --action-text: oklch(10% 0.03 275);
+  --ring-color: oklch(62% 0.25 275);
+}
+
+/* ==========================================================================
+   Theme 5: Warm Amber (Artisanal & Editorial)
+   ========================================================================== */
+[data-theme="warm-amber"] {
+  --bg-canvas: oklch(97.5% 0.012 80);
+  --bg-surface: oklch(99.5% 0.005 80);
+  --border-subtle: oklch(90% 0.02 80);
+  --text-primary: oklch(20% 0.03 60);
+  --text-secondary: oklch(45% 0.03 60);
+  --action-primary: oklch(54% 0.18 55);
+  --action-hover: oklch(48% 0.19 55);
+  --action-text: oklch(99% 0 0);
+  --ring-color: oklch(54% 0.18 55);
+}
+
+.dark [data-theme="warm-amber"] {
+  --bg-canvas: oklch(15% 0.02 60);
+  --bg-surface: oklch(19% 0.025 60);
+  --border-subtle: oklch(28% 0.03 60);
+  --text-primary: oklch(96% 0.01 70);
+  --text-secondary: oklch(72% 0.02 70);
+  --action-primary: oklch(66% 0.18 60);
+  --action-hover: oklch(72% 0.18 60);
+  --action-text: oklch(12% 0.02 60);
+  --ring-color: oklch(66% 0.18 60);
+}

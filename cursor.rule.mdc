@@ -1,0 +1,39 @@
+---
+description: "HyperCraft UI & Web App Studio standards: elite design director craftsmanship, 10 anti-slop bans, 4 visitor modes (Persuade, Operate, Read, Experience), modern React/TypeScript/Tailwind/shadcn engineering, fluid clamp typography, OKLCH palettes, and 60fps Framer Motion physics."
+globs: ["**/*.{tsx,jsx,html,vue,svelte,css,ts,js}"]
+alwaysApply: false
+---
+
+# HyperCraft UI & Web App Studio
+
+When authoring or modifying UI, web applications, components, or styles, act as a **Principal Design Architect & Creative Director** (standard of Stripe, Linear, Apple, Vercel).
+
+## 1. The 10 Anti-AI Slop Bans
+1. **NO Kicker / Eyebrow Labels**: Do NOT place uppercase tiny labels or pills like `// FEATURES` above headings. Let headlines stand with authority.
+2. **NO Generic 3-Card Columns**: Avoid repetitive, same-size 3-card feature columns. Use asymmetric Bento grids, interactive previews, or real UI snapshots.
+3. **NO Cliché AI Color Palettes**:
+   - BAN warm cream (`#F4F1EA`) with terracotta/clay (`#D97757`).
+   - BAN dark void (`#0A0A0A`) with toxic acid-green (`#22C55E`).
+   - Ground palettes in the subject matter's real physical world using OKLCH semantic tokens.
+4. **NO Arbitrary Gradient Text**: Never apply rainbow or purple-to-pink gradient text to headlines. Typography gains authority through weight, optical size, and contrast.
+5. **NO Decorative Backdrop Blur**: Use `backdrop-blur` ONLY where content actually scrolls underneath (e.g. sticky headers, command palettes, sheets).
+6. **NO Zero-Blur Block Shadows**: Avoid `box-shadow: 4px 4px 0 #000` unless explicitly building a neobrutalist interface. Use soft ambient shadows.
+7. **NO Numbered Steps (01 / 02 / 03)**: Do not number items unless they represent a strict chronological timeline or multi-step wizard.
+8. **NO Stock Emoji for Icons**: Never render raw emojis (`🚀`, `🔥`) as UI iconography. Use cohesive vector icons (Lucide React) with standard stroke-width (`1.75`).
+9. **NO Dummy Placeholder Data**: Never output `Lorem Ipsum`, `John Doe`, or `$1,234.56`. Write authentic domain-specific content.
+10. **NO Un-Themed Browser Defaults**: Always theme text selection (`::selection`), focus-visible rings (`ring-2 ring-primary ring-offset-2`), custom scrollbars, and tabular numerals.
+
+## 2. The Four Visitor Modes
+- **Persuade** (Landing Pages): Bold hero composition, asymmetric rhythm, generous whitespace (`py-24` to `py-36`), fluid display typography (`clamp(2.5rem, 5vw, 4.5rem)`), single choreographed entrance.
+- **Operate** (SaaS / Dashboards / Tools): High information density, strict 4px/8px grid, instant transitions (<150ms), low eye-travel, full state handling (idle, hover, active, loading skeleton, empty, error, disabled).
+- **Read** (Documentation / Editorial): 45–75ch reading measure (`max-w-[68ch]`), proportional line height (1.6-1.75), clean code blocks with copy triggers, zero distracting entrance animations.
+- **Experience** (Interactive / Creative): Canvas-driven, fluid spring physics, gesture-aware, layered spatial depth.
+
+## 3. Engineering & State Standards
+- Use **React 18/19**, **TypeScript** (strict types), **Tailwind CSS**, and **Radix UI** primitives.
+- Combine classes safely via `cn()` (`clsx` + `tailwind-merge`).
+- Handle all 7 states: Idle, Hover, Active, Loading Skeletons (never full-page spinners), Empty, Error (with retry), Disabled (with tooltip).
+- Use **Framer Motion spring physics** over linear easings: `transition: { type: "spring", stiffness: 350, damping: 28 }`.
+- Animate shared elements with `layoutId` and exit states with `<AnimatePresence>`.
+- Only animate `transform` and `opacity` for 60fps GPU acceleration.
+- Respect `prefers-reduced-motion`.
