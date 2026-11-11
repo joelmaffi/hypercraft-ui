@@ -78,30 +78,114 @@ Located in `templates/components/`:
 
 ## 🚀 Installation & Multi-Agent Setup
 
-### 1. Google Antigravity
-Copy the skill folder into your Antigravity skills directory:
+### Option A: One-Line Git Install (Windows, macOS & Linux)
+
+Clone directly into your target agent directory from any terminal:
+
+```bash
+# 1. Google Antigravity (Project-level)
+git clone https://github.com/joelmaffi/hypercraft-ui.git .agent/skills/hypercraft-ui
+
+# 2. Google Antigravity (Global — active in all projects)
+# Windows CMD:
+git clone https://github.com/joelmaffi/hypercraft-ui.git "%USERPROFILE%\.gemini\config\skills\hypercraft-ui"
+# macOS / Linux / Git Bash:
+git clone https://github.com/joelmaffi/hypercraft-ui.git ~/.gemini/config/skills/hypercraft-ui
+
+# 3. Claude Code
+git clone https://github.com/joelmaffi/hypercraft-ui.git .claude/skills/hypercraft-ui
+
+# 4. Cursor
+git clone https://github.com/joelmaffi/hypercraft-ui.git .cursor/skills/hypercraft-ui
+```
+
+---
+
+### Option B: Install from Extracted ZIP
+
+> **Note for GitHub ZIP downloads**: If you clicked **Code → Download ZIP** on GitHub, the extracted folder is named `hypercraft-ui-main`. Replace `hypercraft-ui` with `hypercraft-ui-main` in the commands below.
+
+#### 1. Google Antigravity
+
+**Windows (Command Prompt / CMD):**
+```cmd
+:: Global installation (available in every project)
+xcopy /E /I /Y hypercraft-ui "%USERPROFILE%\.gemini\config\skills\hypercraft-ui"
+
+:: Or project-level installation
+xcopy /E /I /Y hypercraft-ui .agent\skills\hypercraft-ui
+```
+
+**Windows (PowerShell):**
+```powershell
+# Global installation (available in every project)
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.gemini\config\skills" | Out-Null
+Copy-Item -Recurse -Force "hypercraft-ui" "$env:USERPROFILE\.gemini\config\skills\hypercraft-ui"
+
+# Or project-level installation
+New-Item -ItemType Directory -Force -Path ".agent\skills" | Out-Null
+Copy-Item -Recurse -Force "hypercraft-ui" ".agent\skills\hypercraft-ui"
+```
+
+**macOS / Linux:**
 ```bash
 # Global installation (available in every project)
+mkdir -p ~/.gemini/config/skills
 cp -r hypercraft-ui/ ~/.gemini/config/skills/hypercraft-ui
 
 # Or project-level installation
+mkdir -p .agent/skills
 cp -r hypercraft-ui/ .agent/skills/hypercraft-ui
 ```
 
-### 2. Claude Code
-Install to your Claude skills directory:
+#### 2. Claude Code
+
+**Windows (CMD):**
+```cmd
+xcopy /E /I /Y hypercraft-ui .claude\skills\hypercraft-ui
+```
+
+**Windows (PowerShell):**
+```powershell
+New-Item -ItemType Directory -Force -Path ".claude\skills" | Out-Null
+Copy-Item -Recurse -Force "hypercraft-ui" ".claude\skills\hypercraft-ui"
+```
+
+**macOS / Linux:**
 ```bash
+mkdir -p .claude/skills
 cp -r hypercraft-ui/ .claude/skills/hypercraft-ui
 ```
+
 Invoke in Claude Code with:
 ```bash
 /hypercraft-ui [mode] [action] [target]
 ```
 
-### 3. Cursor
-Cursor automatically detects and applies HyperCraft UI via:
-- `.cursor/rules/hypercraft-ui.mdc`
-- `.cursorrules` in your project root
+#### 3. Cursor
+
+Copy the skill and activate Cursor's automatic project rules (`.cursor/rules/hypercraft-ui.mdc`):
+
+**Windows (CMD):**
+```cmd
+xcopy /E /I /Y hypercraft-ui .cursor\skills\hypercraft-ui
+mkdir .cursor\rules 2>nul
+copy /Y hypercraft-ui\cursor.rule.mdc .cursor\rules\hypercraft-ui.mdc
+```
+
+**Windows (PowerShell):**
+```powershell
+New-Item -ItemType Directory -Force -Path ".cursor\skills", ".cursor\rules" | Out-Null
+Copy-Item -Recurse -Force "hypercraft-ui" ".cursor\skills\hypercraft-ui"
+Copy-Item -Force "hypercraft-ui\cursor.rule.mdc" ".cursor\rules\hypercraft-ui.mdc"
+```
+
+**macOS / Linux:**
+```bash
+mkdir -p .cursor/skills .cursor/rules
+cp -r hypercraft-ui/ .cursor/skills/hypercraft-ui
+cp hypercraft-ui/cursor.rule.mdc .cursor/rules/hypercraft-ui.mdc
+```
 
 ---
 
